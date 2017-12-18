@@ -1,0 +1,31 @@
+{
+  "name": "grpc-web-loader",
+  "version": "1.0.0",
+  "description": "Webpack loader for grpc-web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ishitatsuyuki/grpc-web-loader.git"
+  },
+  "author": "Tatsuyuki Ishi <ishitatsuyuki@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ishitatsuyuki/grpc-web-loader/issues"
+  },
+  "homepage": "https://github.com/ishitatsuyuki/grpc-web-loader#readme",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "loader-utils": "^1.1.0",
+    "rimraf": "^2.6.2",
+    "which": "^1.3.0"
+  },
+  "devDependencies": {
+    "ts-protoc-gen": "^0.4.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}
