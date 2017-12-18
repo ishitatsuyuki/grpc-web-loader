@@ -1,6 +1,6 @@
 {
   "name": "grpc-web-loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Webpack loader for grpc-web",
   "main": "index.js",
   "scripts": {

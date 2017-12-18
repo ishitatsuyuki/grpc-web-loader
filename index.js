@@ -72,10 +72,11 @@ function processGrpcService (loaderContext, options) {
   return processBase(loaderContext, options, '--js_service_out=', async function (dir, relPath) {
     const out = await fs.readFileAsync(path.join(dir, relPath + '_pb_service.js'), {encoding: 'utf8'})
     const pathDiff = '"' + path.join(path.relative(path.dirname(relPath), ''), relPath + '_pb').replace(/\\/g, '/') + '"'
-    return out.replace(pathDiff, JSON.stringify(stringifyLoaders([{
+	const dependencyUri = JSON.stringify(stringifyLoaders([{
       loader: 'grpc-web-loader',
       options: Object.assign({}, options, {kind: 'proto'})
-    }, loaderContext.resourcePath])))
+    }, loaderContext.resourcePath]))
+    return out.replace(pathDiff, dependencyUri) + `Object.assign(module.exports, require(${dependencyUri}))\n`
   })
 }
 
